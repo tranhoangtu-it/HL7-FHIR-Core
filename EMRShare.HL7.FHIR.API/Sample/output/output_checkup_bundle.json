@@ -1,0 +1,116 @@
+{
+  "resourceType": "Bundle",
+  "id": "e39452b4-e08d-4dd3-a8ee-ad5c089b47c0",
+  "type": "document",
+  "timestamp": "2025-06-12T04:09:10.419936",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Bundle_Checkup"
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:85018ed1-f078-416e-b36b-de7dc6ae47fe"
+  },
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:composition-checkup-001",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "composition-checkup-001",
+        "meta": {
+          "profile": [
+            "http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Composition_Checkup"
+          ]
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Health check report"
+            }
+          ]
+        },
+        "date": "2025-06-12T04:09:10.420354",
+        "title": "健康診断結果報告書",
+        "section": [
+          {
+            "title": "血糖値",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.4.504",
+                  "code": "JL001",
+                  "display": "血糖値"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div>血糖値：102 mg/dL (正常)</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:observation-001"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-001",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.200119.4.504",
+              "code": "JL001",
+              "display": "血糖値"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 102,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL"
+            },
+            "high": {
+              "value": 110,
+              "unit": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "正常"
+              }
+            ]
+          }
+        ],
+        "effectiveDateTime": "2025-06-01",
+        "note": [
+          {
+            "text": "基準値内"
+          }
+        ]
+      }
+    }
+  ]
+}

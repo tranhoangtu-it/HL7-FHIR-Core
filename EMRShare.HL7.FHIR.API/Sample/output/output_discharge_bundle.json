@@ -1,0 +1,189 @@
+{
+  "resourceType": "Bundle",
+  "id": "9f0c9bf8-ffd9-4550-a67b-c6a26d7e01b3",
+  "type": "document",
+  "timestamp": "2025-06-12T12:53:10.608513+09:00",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:18cbe5df-0476-4008-89f5-3977a67c9c45"
+  },
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/eDischargeSummary/StructureDefinition/JP_Bundle_eDischargeSummary"
+    ]
+  },
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:composition-discharge-summary",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "composition-discharge-summary",
+        "status": "final",
+        "date": "2025-06-11T17:00:00+09:00",
+        "type": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/core/CodeSystem/doc-typecodes",
+              "code": "34133-9",
+              "display": "退院時サマリ"
+            }
+          ]
+        },
+        "title": "退院時サマリ",
+        "subject": {
+          "reference": "urn:uuid:patient-0001"
+        },
+        "author": [
+          {
+            "reference": "urn:uuid:practitioner-author"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:encounter-0001"
+        },
+        "custodian": {
+          "reference": "urn:uuid:org-custodian"
+        },
+        "section": [
+          {
+            "title": "退院時診断",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/section-codes",
+                  "code": "discharge-diagnosis",
+                  "display": "退院時診断"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div>安定狭心症（狭心症）</div>"
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://jpfhir.jp/fhir/eDischargeSummary/StructureDefinition/JP_Composition_eDischargeSummary"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:patient-0001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-0001",
+        "name": [
+          {
+            "text": "山田太郎"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:practitioner-author",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-author",
+        "name": [
+          {
+            "text": "医師B"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org-custodian",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-custodian",
+        "name": "医療法人ABC病院"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-0001",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-0001",
+        "identifier": [
+          {
+            "system": "http://jpfhir.jp/fhir/core/IdSystem/encounter",
+            "value": "ADM0001"
+          }
+        ],
+        "period": {
+          "start": "2025-05-30",
+          "end": "2025-06-10"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-001",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/core/CodeSystem/medication-codes",
+              "code": "1141007F3ZZZ",
+              "display": "バイアスピリン錠"
+            }
+          ],
+          "text": "バイアスピリン錠100mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-0001"
+        },
+        "authoredOn": "2025-06-10T10:00:00+09:00",
+        "dosageInstruction": [
+          {
+            "text": "内服・経口・１日３回朝昼夕食後",
+            "timing": {
+              "code": {
+                "coding": [
+                  {
+                    "code": "1013044400000000",
+                    "display": "１日３回朝昼夕食後"
+                  }
+                ]
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "PO",
+                  "display": "口"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "錠",
+                  "code": "TAB"
+                }
+              }
+            ]
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 14,
+            "unit": "錠",
+            "code": "TAB"
+          },
+          "expectedSupplyDuration": {
+            "value": 14,
+            "unit": "日分",
+            "code": "d"
+          }
+        }
+      }
+    }
+  ]
+}

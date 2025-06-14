@@ -1,0 +1,52 @@
+{
+  "Header": {
+    "resource_id": "ALLG001",
+    "last_update_date": "2024-06-01T10:00:00+09:00",
+    "active": "true",
+    "longterm_flag": 1,
+    "hosptal_id": "HOSP9999",
+    "hosptal_department_code": "D001",
+    "hosptal_department_name": "内科",
+    "hosptal_department_display": "Internal Medicine",
+    "patient_identifier_01": "P123456789",
+    "patient_identifier_02": "P123ALT",
+    "patient_name_ide": "山田太郎",
+    "patient_name_syl": "ヤマダタロウ",
+    "patient_name_abc": "Taro Yamada",
+    "telecom_phone_home": "0312345678",
+    "telecom_phone_work": "0398765432",
+    "telecom_phone_mobile": "09012345678",
+    "telecom_email_01": "taro.yamada@example.com",
+    "telecom_email_02": "",
+    "telecom_other_01": "",
+    "telecom_other_02": "",
+    "telecom_other_03": "",
+    "gender": "male",
+    "birth_date": "1985-03-15",
+    "address_home_name": "東京都新宿区1-2-3",
+    "address_home_postal_code": "1600022",
+    "address_work_name": "ABC株式会社",
+    "address_work_postal_code": "1000001",
+    "managing_organization_code": "ORG001",
+    "managing_organization_name": "東京都医療センター"
+  },
+  "Allergies": [
+    {
+      "ClinicalStatus": "active",
+      "VerificationStatus": "confirmed",
+      "CategoryCode": "food",
+      "CriticalityCode": "high",
+      "AllergyCode": "J9FA32280000",
+      "AllergyCodeDisplay": "クルミ",
+      "AllergyCodeText": "クルミ（ナッツアレルギー）",
+      "ReactionSubstanceCode": "F001",
+      "ReactionSubstanceDisplay": "Walnut Protein",
+      "ReactionSubstanceText": "ナッツ",
+      "ReactionDescription": "蕁麻疹と呼吸困難",
+      "ReactionOnsetString": "小学生のとき",
+      "ReactionSeverityCode": "severe",
+      "ReactionSeverityDisplay": "重度",
+      "ReactionSeverityText": "強いショック反応"
+    }
+  ]
+}

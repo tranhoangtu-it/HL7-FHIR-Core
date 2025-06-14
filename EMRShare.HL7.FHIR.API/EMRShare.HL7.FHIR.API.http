@@ -1,0 +1,6 @@
+@HL7.FHIR.API_HostAddress = http://localhost:5090
+
+GET {{HL7.FHIR.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

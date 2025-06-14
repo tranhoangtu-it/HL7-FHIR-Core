@@ -1,0 +1,184 @@
+{
+  "resourceType": "Bundle",
+  "id": "5db584bf-c20f-4807-9f78-bb6e15397cec",
+  "type": "document",
+  "timestamp": "2025-06-12T03:23:39.270369",
+  "meta": {
+    "profile": [
+      "http://jpfhir.jp/fhir/clins/StructureDefinition/JP_Bundle_eReferral"
+    ]
+  },
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2822b6b3-c03b-4354-a337-eedaae6d56b3"
+  },
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:3b950f3f-200d-4c65-a76d-11763a3e1f34",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "2c409050-123f-4028-acd9-2cc4d272b9b3",
+        "meta": {
+          "profile": [
+            "http://jpfhir.jp/fhir/eReferral/StructureDefinition/JP_Composition_eReferral"
+          ]
+        },
+        "status": "final",
+        "date": "2025-06-12T03:23:39.270664",
+        "type": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/core/CodeSystem/doc-typecodes",
+              "code": "11506-3",
+              "display": "診療情報提供書"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-001"
+        },
+        "author": [
+          {
+            "reference": "urn:uuid:practitioner-001"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:encounter-001"
+        },
+        "custodian": {
+          "reference": "urn:uuid:ORG100"
+        },
+        "section": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/section-type",
+                  "code": "problem",
+                  "display": "Problem"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div>高血圧</div>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:patient-001",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [
+          {
+            "text": "山田太郎"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1980-01-01",
+        "text": {
+          "status": "generated",
+          "div": "<div>山田太郎</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:practitioner-001",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-001",
+        "name": [
+          {
+            "text": "Dr. A"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div>Dr. A</div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medreq-001",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medreq-001",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/core/CodeSystem/medication",
+              "code": "1141007F3ZZZ",
+              "display": "カロナール錠５００"
+            }
+          ],
+          "text": "カロナール錠５００mg"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-001"
+        },
+        "authoredOn": "2025-06-11T09:00:00+09:00",
+        "dosageInstruction": [
+          {
+            "text": "内服・経口・１日３回朝昼夕食後",
+            "timing": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://jpfhir.jp/fhir/core/CodeSystem/usage-timing",
+                    "code": "1013044400000000",
+                    "display": "１日３回朝昼夕食後 服用"
+                  }
+                ],
+                "text": "内服・経口・１日３回朝昼夕食後"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "錠",
+                  "code": "TAB"
+                }
+              }
+            ],
+            "route": {
+              "coding": [
+                {
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/route",
+                  "code": "PO",
+                  "display": "口"
+                }
+              ],
+              "text": "経口"
+            },
+            "method": {
+              "coding": [
+                {
+                  "system": "http://jpfhir.jp/fhir/core/CodeSystem/method",
+                  "code": "1",
+                  "display": "内服"
+                }
+              ],
+              "text": "内服"
+            }
+          }
+        ],
+        "dispenseRequest": {
+          "quantity": {
+            "value": 10,
+            "unit": "錠",
+            "code": "TAB"
+          },
+          "expectedSupplyDuration": {
+            "value": 5,
+            "unit": "日分",
+            "code": "d"
+          }
+        }
+      }
+    }
+  ]
+}
