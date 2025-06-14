@@ -10,8 +10,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EMRShare.HL7.FHIR.DLL\HL7.FHIR.DLL.csproj" />
-  </ItemGroup>
-
 </Project>

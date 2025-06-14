@@ -23,19 +23,7 @@ namespace HL7.FHIR.API.Controllers
         [HttpPost]
         public IActionResult ConvertToFhirJson([FromBody] DischargeSummaryInputDto dto)
         {
-            // Implementation for retrieving discharge summary
-            string folder = @"C:\Users\tuth\Desktop\WORK\EMRShare\NEW\2.source\HL7.FHIR.API\bin\Release\net9.0\Sample\output"; // ???ng d?n th? m?c ch?a file json
-            string fileName = "output_discharge_bundle"; // t?n file, v? d? test.json
-
-            try
-            {
-                string jsonContent = JsonFileReader.ReadJsonContent(folder, fileName);
-                return Content(jsonContent, "application/json");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Conversion failed: {ex.Message}");
-            }
+            return null; // This method currently does not perform any operations and returns null.
         }
 
     }

@@ -21,8 +21,4 @@
     <Folder Include="Utils\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EMRShare.HL7.FHIR.Core\HL7.FHIR.Core.csproj" />
-  </ItemGroup>
-
 </Project>
